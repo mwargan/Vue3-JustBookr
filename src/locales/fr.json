@@ -103,5 +103,7 @@
     "Sell a book": "Vendre un livre",
     "{universityName} doesn't have any users right now": "{universityName} n'a pas d'utilisateurs pour le moment",
     "Public profile": "Profil public",
-    "Visit profile": "Visiter le profil"
+    "Visit profile": "Visiter le profil",
+    "Sell": "Vendre",
+    "Buy": "Acheter"
 }

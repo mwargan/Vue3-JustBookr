@@ -103,5 +103,7 @@
     "Sell a book": "Sell a book",
     "{universityName} doesn't have any users right now": "{universityName} doesn't have any users right now",
     "Public profile": "Public profile",
-    "Visit profile": "Visit profile"
+    "Visit profile": "Visit profile",
+    "Sell": "Sell",
+    "Buy": "Buy"
 }
