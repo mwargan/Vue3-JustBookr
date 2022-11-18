@@ -10,6 +10,7 @@ import router from "./router";
 import "./eventBus/listeners/index";
 
 import VueGtagPlugin from "vue-gtag";
+import VueHotjar from "vue-hotjar-next";
 import "./assets/main.css";
 import i18n, { SUPPORT_LOCALES } from "./locales/i18n";
 import { gatePlugin } from "@m-media/vue3-gate-keeper";
@@ -73,6 +74,12 @@ app.use(
   },
   router
 );
+
+app.use(VueHotjar, {
+  id: parseFloat(import.meta.env.VITE_HOTJAR_ID) ?? 1,
+  isProduction: import.meta.env.VITE_HOTJAR_ID && import.meta.env.PROD,
+  snippetVersion: 6,
+});
 
 app.use(EventsPlugin);
 
