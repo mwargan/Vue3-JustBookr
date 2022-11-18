@@ -143,6 +143,11 @@ const router = createRouter({
       },
     },
     {
+      path: "/terms-and-conditions",
+      name: "terms-and-conditions",
+      component: () => import("../views/TermsAndConditionsView.vue"),
+    },
+    {
       path: "/sell",
       name: "sell",
       component: () => import("../views/SellView.vue"),
