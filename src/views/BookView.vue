@@ -180,9 +180,14 @@ onBeforeRouteUpdate(async (to) => {
           $t("{company} may have a copy of this book", { company: "Amazon" })
         }}
         <template #footer>
-          <BaseButton>{{
-            $t("Check on {company}", { company: "Amazon" })
-          }}</BaseButton>
+          <BaseButton
+            :href="
+              'https://www.amazon.com/s//ref=as_li_ss_tl?field-keywords=' +
+              book.isbn +
+              '&linkCode=ll2&tag=justbookr01-20'
+            "
+            >{{ $t("Check on {company}", { company: "Amazon" }) }}</BaseButton
+          >
         </template>
       </CardElement>
 
