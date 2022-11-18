@@ -34,6 +34,13 @@ const router = createRouter({
       },
     },
     {
+      path: "/register",
+      name: "register",
+      redirect: (to) => {
+        return `/sign-up`;
+      },
+    },
+    {
       path: "/add-payment-method",
       name: "add-payment-method",
       component: () => import("../views/AddPaymentMethodView.vue"),
