@@ -36,10 +36,10 @@ export default {
       theme: theme,
     });
   },
-  changed_university: (university: any) => {
-    set({ university: university });
+  changed_university: (universityId: string | number) => {
+    set({ university_id: universityId });
     event("change_university", {
-      university: university,
+      university_id: universityId,
     });
   },
   subscribed_to_post_notifications: (data: {

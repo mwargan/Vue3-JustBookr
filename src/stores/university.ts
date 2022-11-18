@@ -1,4 +1,4 @@
-import { ref, toRaw } from "vue";
+import { ref } from "vue";
 import { defineStore } from "pinia";
 import axios from "axios";
 import { eventTypes, useEventsBus } from "@/eventBus/events";
@@ -15,7 +15,7 @@ export const useUniversityStore = defineStore("university", () => {
     getUniversity(currentUniversity.value["uni-id"]);
     eventBus.$emit(
       eventTypes.changed_university,
-      toRaw(currentUniversity.value)
+      currentUniversity.value["uni-id"]
     );
   };
 
