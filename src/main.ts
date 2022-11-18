@@ -25,7 +25,7 @@ import "@github/auto-complete-element";
 
 const app = createApp(App);
 
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 // Set accept header
 axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
