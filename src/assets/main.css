@@ -1,0 +1,389 @@
+@import "@picocss/pico";
+@import "./form.css";
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+main>* {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+nav~main {
+  margin-top: 40px;
+}
+
+main~footer {
+  margin-top: 40px;
+}
+
+article {
+  min-width: 100%;
+}
+
+@media (min-width: 768px) {
+  article {
+    min-width: 40vw;
+  }
+}
+
+article>header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  word-break: break-word;
+}
+
+/* Article/cards header and footer children should not have a margin-bottom */
+article>header>div>*,
+article>footer>* {
+  margin-bottom: 0px;
+}
+
+main~footer ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+main~footer ul>li {
+  list-style: none;
+}
+
+/* Fixes iframe (especially for 3DS from Stripe) not being inter-actable due to parent modal pointer-event setting */
+.modal-is-open iframe {
+  pointer-events: initial;
+}
+
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+/* vue transition slide in from top */
+.v-enter-active,
+.v-leave-active {
+  transition: transform 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  transform: translateY(-10px);
+}
+
+article>header,
+article>footer {
+  background: none;
+  border: none;
+}
+
+article>header {
+  margin-bottom: 0;
+}
+
+article>footer {
+  margin-top: 0;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+article p {
+  margin-bottom: 0;
+}
+
+:root,
+:root:not([data-theme=light]),
+:root:not([data-theme=dark]) {
+  --border-radius: 16px;
+  --primary: #3e73b9;
+}
+
+nav form {
+  margin: 0;
+}
+
+img.book {
+  width: 100%;
+  border-radius: var(--border-radius);
+  aspect-ratio: 1/1.3;
+  object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .view>section:first-child {
+    height: calc(100dvh - 3rem);
+    position: sticky;
+    top: 3rem;
+    /* Scroll on overflow */
+    overflow-y: auto;
+    /* Hide scrollbars */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+  }
+
+
+}
+
+body .view .grid {
+  grid-template-columns: repeat(auto-fit, minmax(0%, 1fr)) !important;
+}
+
+.view h1,
+.image-and-text h3 {
+  /* Show ellipses */
+  overflow: hidden;
+  /* Show ellipses */
+  text-overflow: ellipsis;
+
+  /* Dont break after 2 lines  */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 0;
+}
+
+.view>section:first-child label:first-child,
+.view>section:first-child button:first-child {
+  margin-top: var(--block-spacing-vertical);
+}
+
+/*
+nav ul:nth-of-type(2) {
+  flex-grow: 1;
+}
+
+nav ul:nth-of-type(2) li {
+  min-width: max-content;
+} */
+
+body .view .grid.image-and-text {
+  grid-template-columns: 1fr 2fr !important;
+}
+
+.view section .grid img,
+.image-and-text img {
+  border-radius: var(--border-radius);
+  background-image: url("https: //justbookr.com/images/image_error.svg");
+  width: 100%;
+}
+
+nav input[type="search"] {
+  border: none;
+}
+
+section>article:first-of-type {
+  margin-top: 0;
+}
+
+input~ul {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+input~ul>li {
+  margin-bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+input~ul>li:hover {
+  background: var(--primary);
+  color: var(--primary-inverse);
+}
+
+article.grid {
+  margin: inherit;
+}
+
+body {
+  scroll-snap-type: mandatory;
+  overflow: auto;
+}
+
+article {
+  scroll-snap-align: center;
+}
+
+.horizontal-scroll {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 8px;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  grid-auto-columns: 75vw;
+  -ms-overflow-style: none;
+  -ms-scroll-snap-type: x mandatory;
+  /* flex-wrap: nowrap; */
+  scrollbar-width: none;
+  padding-top: calc(var(--block-spacing-vertical) * 0.5);
+  margin-top: calc(var(--block-spacing-vertical) * -0.5);
+  padding-bottom: calc(var(--block-spacing-vertical) * 1.5);
+  margin-bottom: calc(var(--block-spacing-vertical) * -1.5);
+
+  padding-left: calc(var(--block-spacing-horizontal) * 1);
+  margin-left: calc(var(--block-spacing-horizontal) * -1);
+  padding-right: calc(var(--block-spacing-horizontal) * 1);
+  margin-right: calc(var(--block-spacing-horizontal) * -1);
+}
+
+.horizontal-scroll img {
+  height: 320px;
+}
+
+@media (min-width: 992px) {
+  .horizontal-scroll {
+    grid-auto-columns: 35vw;
+  }
+}
+
+.horizontal-scroll>* {
+  margin-top: 0;
+  margin-bottom: 0;
+  min-width: min-content;
+  word-wrap: break-word;
+}
+
+.bg-image {
+  background-color: #374956;
+  background-image: url("assets/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.full-card-image {
+  background-color: #374956;
+  background-image: url("assets/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  margin-top: calc(var(--block-spacing-vertical));
+}
+
+@media (min-width: 992px) {
+  .full-card-image {
+    margin-top: calc(var(--block-spacing-vertical) * -1);
+    margin-bottom: calc(var(--block-spacing-vertical) * -1);
+    margin-right: calc(var(--block-spacing-horizontal) * -1);
+    width: calc(100% + var(--block-spacing-horizontal) * 2);
+    max-width: calc(100% + var(--block-spacing-horizontal) * 2);
+  }
+}
+
+article .images~header {
+  margin-top: 0;
+}
+
+.images img {
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  width: 100%;
+}
+
+header.page-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 53dvh;
+  justify-content: center;
+  margin-top: -40px;
+
+  /* Force 100% width of page */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+
+  background-color: var(--primary);
+
+  /* Make background image full */
+  background-size: cover;
+
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
+
+  padding-top: calc(var(--block-spacing-vertical) * 2);
+  padding-bottom: calc(var(--block-spacing-vertical) * 2);
+
+  /* align-items: center; */
+}
+
+header.page-header>* {
+  max-width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+header.page-header :where(h1, h2, h3, h4, h5, h6, p, label, input, li) {
+  color: var(--primary-inverse);
+}
+
+article.contrast {
+  --card-background-color: var(--contrast);
+  --card-border-color: var(--contrast);
+  --color: var(--contrast-inverse);
+}
+
+article.contrast :where(h1, h2, h3, h4, h5, h6) {
+  --color: var(--contrast-inverse);
+}
+
+/* If the last element of article is header */
+article :is(header):last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+main {
+  display: grid;
+  gap: calc(var(--block-spacing-vertical) * 2);
+  grid-auto-flow: row;
+  grid-auto-columns: 100%;
+}
+
+.page-footer ul {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .page-footer ul {
+    flex-direction: row;
+    gap: var(--block-spacing-horizontal)
+  }
+}
+
+.page-footer ul>li {
+  width: 100%;
+}

@@ -1,0 +1,25 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "isbn": "9780273777809",
+            "book-title": "Financial Accounting - International Financial Reporting Standards",
+            "author": "Walter T. Harrison Jr., Charles T. Horngren, C. William Thomas, Themin Suwardy",
+            "book-des": "For introductory courses in Financial Accounting. Financial Accounting helps you \"nail\" the accounting cycle! The concepts and mechanics you learn in the critical 'accounting cycle' chapters are used consistently and repetitively-and with clear-cut details and explanations-throughout the remainder of the text, minimizing confusion. Financial Accounting 9e Global Edition has been fully adapted to include International Financial Reporting Standards throughout, and to include examples of IFRS-compliant companies. This Global Edition has been edited to include enhancements making it more relevant to students outside the United States.",
+            "edition": "9th",
+            "image-url": "https://s3-eu-west-1.amazonaws.com/justbookrbucket/images/Books/FinancialAccounting.jpg",
+            "posts_count": 1,
+            "average_price": "€24"
+        }
+    ],
+    "first_page_url": "https://justbookr.com/api/v1/suggestions/other-editions/9789810684570?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "https://justbookr.com/api/v1/suggestions/other-editions/9789810684570?page=1",
+    "next_page_url": null,
+    "path": "https://justbookr.com/api/v1/suggestions/other-editions/9789810684570",
+    "per_page": 7,
+    "prev_page_url": null,
+    "to": 1,
+    "total": 1
+}

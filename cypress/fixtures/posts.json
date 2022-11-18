@@ -1,0 +1,43 @@
+[
+    {
+        "post-id": 1232,
+        "user-id": 1,
+        "date": "1526759866",
+        "post-description": "Book is in good condition!",
+        "isbn": "9780273753360",
+        "uni-id": 16763,
+        "price": "\u20ac34",
+        "status": 1,
+        "boosts": [],
+        "university": {
+            "uni-id": 16763,
+            "uni-name": "International University of Monaco",
+            "en-name": null,
+            "abr": "IUM",
+            "country_id": 492,
+            "city": "",
+            "address": "14 Rue Hubert Clerissi, Le Stella",
+            "description": "80+ different nationalities represented in the student body and faculty. We are a melting pot of ideas, energy and influences. Richly diverse, vibrant, and connected experience are guaranteed.",
+            "uni-tel": "",
+            "uni-pic": "https:\/\/s3-eu-west-1.amazonaws.com\/justbookrbucket\/images\/Unis\/MonacoPort.jpg",
+            "uni-logo": "https:\/\/pbs.twimg.com\/profile_images\/936233627884584960\/ELidk2xe_400x400.jpg",
+            "uni-lon": null,
+            "url": "http:\/\/www.monaco.edu",
+            "country": {
+                "id": 492,
+                "currency": "\u20ac",
+                "name": "Monaco"
+            }
+        },
+        "user": {
+            "user-id": 1,
+            "name": "Micha\u0142",
+            "uni-id": 16763,
+            "user-registered": "1466713513",
+            "profilepic": "https:\/\/justbookrbucket.s3.eu-west-1.amazonaws.com\/images\/Uploads\/users\/1\/images\/avatar\/rTHZXivzfvC7C8zdoPDDdbWfneDsO59MG9VKUDIi.jpeg",
+            "last_login": "1668409664",
+            "positive_ratings": 2,
+            "points": 1939
+        }
+    }
+]

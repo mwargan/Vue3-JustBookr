@@ -1,0 +1,66 @@
+{
+    "user-id-buy": 2,
+    "post-id": 3,
+    "comment": null,
+    "location-meet": "At the library",
+    "location-date": "1669186200",
+    "location-time": null,
+    "user-id-sell": 1,
+    "connect-id": 3,
+    "post": {
+        "post-id": 3,
+        "user-id": 1,
+        "date": "1668546019",
+        "post-description": "9780273753360 9780273753360 9780273753360",
+        "isbn": "9780273753360",
+        "uni-id": 16763,
+        "price": "23",
+        "status": 0,
+        "boosts": [],
+        "university": {
+            "uni-id": 16763,
+            "uni-name": "International University of Monaco",
+            "en-name": null,
+            "abr": "IUM",
+            "country_id": 492,
+            "city": "",
+            "address": "14 Rue Hubert Clerissi, Le Stella",
+            "description": "80+ different nationalities represented in the student body and faculty. We are a melting pot of ideas, energy and influences. Richly diverse, vibrant, and connected experience are guaranteed.",
+            "uni-tel": "",
+            "uni-pic": "https://s3-eu-west-1.amazonaws.com/justbookrbucket/images/Unis/MonacoPort.jpg",
+            "uni-logo": "https://pbs.twimg.com/profile_images/936233627884584960/ELidk2xe_400x400.jpg",
+            "uni-lon": null,
+            "url": "http://www.monaco.edu",
+            "country": null
+        },
+        "user": {
+            "user-id": 1,
+            "name": "Test",
+            "uni-id": 16763,
+            "user-registered": "1668543973",
+            "profilepic": "https://justbookr.com/images/JBicon.svg",
+            "last_login": "1668543973",
+            "positive_ratings": 0,
+            "points": 17
+        },
+        "textbook": {
+            "isbn": "9780273753360",
+            "book-title": "9780273753360",
+            "author": "9780273753360",
+            "book-des": "9780273753360",
+            "edition": "",
+            "image-url": "/storage/images/Uploads/books/9780273753360/images/cover/ptqhWHJNGlie1RzulZClA01FY9AjLIWi82SmBqKm.png",
+            "average_price": "€22"
+        }
+    },
+    "buyer": {
+        "user-id": 2,
+        "name": "Gest",
+        "uni-id": 16763,
+        "user-registered": "1668547068",
+        "profilepic": "https://justbookr.com/images/JBicon.svg",
+        "last_login": "1668581673",
+        "positive_ratings": 0,
+        "points": 12
+    }
+}
