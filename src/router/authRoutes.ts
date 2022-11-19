@@ -26,7 +26,6 @@ export default [
       gates: ["auth"],
     },
   },
-
   {
     path: "/sign-up",
     name: "sign-up",

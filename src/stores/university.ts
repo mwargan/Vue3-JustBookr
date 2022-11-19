@@ -19,20 +19,25 @@ export const useUniversityStore = defineStore("university", () => {
     );
   };
 
-  const getUniversity = (id: string | number) => {
-    return axios.get(`/api/v1/universities/${id}`).then((response) => {
-      // Change the keys of the response.data object
-      // to match the keys of the currentUniversity.value object
-      currentUniversity.value = {
-        ...response.data,
-        id: response.data["uni-id"],
-      };
-      return response.data;
-    });
+  const getUniversity = async (id: string | number) => {
+    const response = await axios.get(`/api/v1/universities/${id}`);
+    // Change the keys of the response.data object
+    // to match the keys of the currentUniversity.value object
+    currentUniversity.value = {
+      ...response.data,
+      id: response.data["uni-id"],
+    };
+    return response.data;
   };
 
   if (currentUniversity.value["uni-id"]) {
     getUniversity(currentUniversity.value["uni-id"]);
+  }
+
+  const localUniversityId = localStorage.getItem("currentUniversityId");
+
+  if (localUniversityId && !currentUniversity.value["uni-id"]) {
+    setCurrentUniversityId(localUniversityId);
   }
 
   return {

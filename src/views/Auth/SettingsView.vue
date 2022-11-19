@@ -16,7 +16,7 @@ const handleUpdate = (event: { email: string | undefined }) => {
   }
 };
 
-const addingNewPaymentMethod = ref(false);
+// const addingNewPaymentMethod = ref(false);
 
 const accessTokens = ref<PersonalAccessToken[]>([]);
 
@@ -24,17 +24,17 @@ userStore
   .getPersonalAccessTokens()
   .then((tokens) => (accessTokens.value = tokens));
 
-const handleCreatedToken = (e: PersonalAccessToken) => {
-  accessTokens.value.push(e);
-};
+// const handleCreatedToken = (e: PersonalAccessToken) => {
+//   accessTokens.value.push(e);
+// };
 
-const handleDeleteToken = (id: string) => {
-  userStore.deletePersonalAccessToken(id);
-  const accessTokenIndex = accessTokens.value.findIndex((token) => {
-    return token.id === id;
-  });
-  accessTokens.value.splice(accessTokenIndex);
-};
+// const handleDeleteToken = (id: string) => {
+//   userStore.deletePersonalAccessToken(id);
+//   const accessTokenIndex = accessTokens.value.findIndex((token) => {
+//     return token.id === id;
+//   });
+//   accessTokens.value.splice(accessTokenIndex);
+// };
 </script>
 <template>
   <h1>{{ $t("My Account") }}</h1>

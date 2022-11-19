@@ -36,7 +36,7 @@ const router = createRouter({
     {
       path: "/register",
       name: "register",
-      redirect: (to) => {
+      redirect: () => {
         return `/sign-up`;
       },
     },
