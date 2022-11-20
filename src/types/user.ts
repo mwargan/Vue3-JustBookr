@@ -11,6 +11,7 @@ export interface User {
   seen_at: Date;
   "user-registered": string;
   updated_at: Date;
+  last_login: String | Number | null;
   description: string | null;
   "uni-id": number | null;
   is_public: boolean;

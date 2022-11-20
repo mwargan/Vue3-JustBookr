@@ -21,11 +21,11 @@ const user = route.params.user as unknown as UserType;
 
 const getPosts = () => {
   axios
-    .get(
-      "/api/v1/posts?paginate=false&available=true&active=true&user=" +
-        route.params.id
-    )
+    .get("/api/v1/posts?paginate=false&user=" + route.params.id)
     .then((response) => {
+      response.data.forEach((post: Post) => {
+        post.user = user;
+      });
       posts.value = response.data;
       isLoading.value = false;
     });
@@ -50,6 +50,14 @@ $bus.$on(eventTypes.changed_locale, () => {
 });
 
 const appName = import.meta.env.VITE_APP_NAME;
+
+const recentlySeen = () => {
+  const now = new Date().getTime() / 1000;
+
+  const threeMonthsAgo = now - 7776000;
+
+  return Number(user?.last_login) > threeMonthsAgo;
+};
 </script>
 <template>
   <div class="grid view">
@@ -127,7 +135,7 @@ const appName = import.meta.env.VITE_APP_NAME;
           v-for="post in posts"
           :key="post['post-id']"
           :post="post"
-          :showUniversity="false"
+          :allow-buying="recentlySeen"
         />
       </template>
       <div v-else>

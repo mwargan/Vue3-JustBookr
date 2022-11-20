@@ -7,12 +7,44 @@ import BookElement from "./BookElement.vue";
 
 const userStore = useUserStore();
 
-defineProps({
+const props = defineProps({
   post: {
     type: Object,
     required: true,
   },
+  allowBuying: {
+    type: Boolean,
+    default: true,
+  },
 });
+
+// Get current time to compare with another like 1606579690
+const now = new Date().getTime() / 1000;
+
+const threeMonthsAgo = now - 7776000;
+
+const canBuy = () => {
+  if (!props.allowBuying) {
+    return false;
+  }
+
+  if (userStore.user?.["user-id"] == props.post["user-id"]) {
+    return false;
+  }
+
+  if (props.post.status !== 1) {
+    return false;
+  }
+
+  if (
+    props.post.user &&
+    Number(props.post.user?.last_login) <= threeMonthsAgo
+  ) {
+    return false;
+  }
+
+  return true;
+};
 </script>
 <template>
   <CardElement>
@@ -21,6 +53,7 @@ defineProps({
         <img
           width="45"
           height="45"
+          v-fallback-img
           :alt="post.user.name"
           :src="post.user.profilepic"
         />
@@ -44,14 +77,20 @@ defineProps({
       @click="$router.push('/books/' + post.textbook['isbn'])"
     />
 
-    <template v-if="userStore.user?.['user-id'] !== post['user-id']" #footer>
+    <template v-if="canBuy()" #footer>
       <BuyBook :postId="post['post-id']">
         <BaseButton>{{ $t("Buy now") }}</BaseButton>
       </BuyBook>
     </template>
-    <template v-else #footer>
+    <template
+      v-else-if="userStore.user?.['user-id'] === post['user-id']"
+      #footer
+    >
       <BaseButton>{{ $t("Edit") }}</BaseButton>
     </template>
+    <template v-else #footer
+      ><BaseButton :disabled="true">{{ $t("Sold") }}</BaseButton></template
+    >
     <!-- <template v-else> Your post </template> -->
   </CardElement>
 </template>

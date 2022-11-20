@@ -34,7 +34,7 @@ const getPosts = () => {
     .get(
       "/api/v1/posts?isbn=" +
         isbn.value +
-        "&paginate=false&available=true&active=true" +
+        "&paginate=false" +
         (university.currentUniversity["uni-id"]
           ? "&university=" + university.currentUniversity["uni-id"]
           : "")
