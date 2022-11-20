@@ -71,7 +71,11 @@ onMounted(() => {
         <CardElement
           v-for="post in posts"
           :key="post.isbn"
-          @click="$router.push('/books/' + post['isbn'])"
+          @click="
+            $router.push(
+              '/books/' + post['isbn'] + '?uni_id=' + university['uni-id']
+            )
+          "
         >
           <BookElement
             :title="post['book-title']"
