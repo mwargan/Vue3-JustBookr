@@ -23,9 +23,6 @@ const getPosts = () => {
   axios
     .get("/api/v1/posts?paginate=false&user=" + route.params.id)
     .then((response) => {
-      response.data.forEach((post: Post) => {
-        post.user = user;
-      });
       posts.value = response.data;
       isLoading.value = false;
     });
@@ -51,13 +48,11 @@ $bus.$on(eventTypes.changed_locale, () => {
 
 const appName = import.meta.env.VITE_APP_NAME;
 
-const recentlySeen = () => {
-  const now = new Date().getTime() / 1000;
+const now = new Date().getTime() / 1000;
 
-  const threeMonthsAgo = now - 7776000;
+const threeMonthsAgo = now - 7776000;
 
-  return Number(user?.last_login) > threeMonthsAgo;
-};
+const recentlySeen = Number(user?.last_login) > threeMonthsAgo;
 </script>
 <template>
   <div class="grid view">
